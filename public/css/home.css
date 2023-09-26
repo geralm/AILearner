@@ -67,6 +67,8 @@ body {
     -webkit-user-select: none;
     touch-action: manipulation;
     min-height: 30px;
+    border: #f2f2f2 solid 5px;
+
 }
 
 .btn-init {
@@ -83,6 +85,7 @@ body {
     width: 60%;
     padding: 5px 5px;
 }
+
 
 .btn-init:hover,
 .btn-try:hover {
@@ -107,8 +110,9 @@ nav .btn-init {
     padding: 0.25rem 0;
     font-weight: 700;
     color: #f2f2f2;
-    margin-left: 1rem;
+    margin-left: 3rem;
     border-bottom: 0.25rem solid transparent;
+    letter-spacing: 0.18rem;
 }
 
 .nav-link:hover {
