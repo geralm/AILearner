@@ -1,10 +1,13 @@
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
 const express = require('express');
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
 const path = require('path')
 
 // MONGO DB CONNECTION
-const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/ai-learner'
+const dbUrl = process.env.DB_URL || `mongodb://127.0.0.1:27017/${process.env.DB_NAME}`
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true

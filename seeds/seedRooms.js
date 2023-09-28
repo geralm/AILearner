@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Room = require("../models/rooms/room");
-mongoose.connect('mongodb://127.0.0.1:27017/AI-LEARNER', {
+mongoose.connect(`mongodb://127.0.0.1:27017/${process.env.DB_NAME}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
