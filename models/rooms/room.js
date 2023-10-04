@@ -6,7 +6,7 @@ const roomSchema = new Schema({
         type: String,
         require: true,
     },
-    bot_role: {
+    bot_role: { // AI Role in the room
         type:String,
         require: true
     },
