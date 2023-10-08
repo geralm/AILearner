@@ -13,6 +13,11 @@ const UserSchema = new Schema({
         require:true,
         unique:true
     },
+    created_at: {
+        type: Date,
+        default: Date.now(),
+    }
+    
 });
 // UserSchema.plugin(passportLocalMongoose);
 

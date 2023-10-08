@@ -19,6 +19,10 @@ const noteSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Room',
         require:true
+    },
+    created_at: {
+        type: Date,
+        default: Date.now()
     }
 });
 module.exports = mongoose.model('Note', noteSchema);
