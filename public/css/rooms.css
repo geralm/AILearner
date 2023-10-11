@@ -22,6 +22,7 @@ body {
 
 .main-section {
     background-color: gray;
-    flex: 85; /* Cambiamos flex: 2 a flex: 85 para que ocupe el 85% */
+    /* flex: 85; Cambiamos flex: 2 a flex: 85 para que ocupe el 85% */
     padding: 20px;
+    display: block;
 }

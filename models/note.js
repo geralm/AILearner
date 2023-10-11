@@ -15,9 +15,9 @@ const noteSchema = new Schema({
         ref: 'User',
         require:true,
     },
-    room:{
+    chatroom:{
         type: Schema.Types.ObjectId,
-        ref: 'Room',
+        ref: 'chatroom',
         require:true
     },
     created_at: {
