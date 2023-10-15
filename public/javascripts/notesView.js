@@ -53,7 +53,7 @@ export default class NotesView {
         const notesListContainer = this.root.querySelector('.notes__list');
         notesListContainer.innerHTML = '';
         for (const note of notes) {
-            const html = this._createListItemHTML(note.id, note.title, note.body, new Date(note.updated));
+            const html = this._createListItemHTML(note.id, note.title, note.content, new Date(note.created_at));
             notesListContainer.insertAdjacentHTML('beforeend', html);
         }
         //Setup the click handler for each note in the list

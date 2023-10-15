@@ -16,7 +16,11 @@ const UserSchema = new Schema({
     created_at: {
         type: Date,
         default: Date.now(),
-    }
+    }, 
+    notes: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Note',
+    }]
     
 });
 UserSchema.plugin(passportLocalMongoose);

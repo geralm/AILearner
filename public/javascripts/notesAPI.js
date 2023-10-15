@@ -1,25 +1,26 @@
 export default class NotesAPI {
-    static async getAllNotes() {
-        try {
-            const response = await fetch('/note', {
-                method: 'get'
-            });
-
+    static getAllNotes() {
+        return fetch('/note', {
+            method: 'get'
+        })
+        .then(response => {
             if (response.status === 401) {
                 window.location.href = '/login';
             }
-
+    
             if (!response.ok) {
                 throw new Error('Error in fetching notes');
             }
-
-            const notes = await response.json();
-
-            return notes.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
-        } catch (error) {
+    
+            return response.json();
+        })
+        .then(notes => notes.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)))
+        .catch(error => {
+            console.error('Error:', error);
             return []; // Devuelve un valor predeterminado en caso de error
-        }
+        });
     }
+    
 
     static async saveNotes(noteToSave, chatroomid) {
         try {
@@ -46,7 +47,8 @@ export default class NotesAPI {
 
             return response.json();
         } catch (error) {
-            return console.log("Failed to save notes") // Re-lanza el error para que pueda ser manejado en otro lugar si es necesario
+            console.log("Failed to save notes") // Re-lanza el error para que pueda ser manejado en otro lugar si es necesario
+            return error;
         }
     }
 
