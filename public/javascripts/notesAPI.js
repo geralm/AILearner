@@ -11,10 +11,8 @@ export default class NotesAPI {
             if (!response.ok) {
                 throw new Error('Error in fetching notes');
             }
-            
             return response.json();
         })
-        .then(notes => notes.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)))
         .catch(error => {
             console.error('Error:', error);
             return []; // Devuelve un valor predeterminado en caso de error

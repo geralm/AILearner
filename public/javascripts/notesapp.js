@@ -11,9 +11,9 @@ export default class App {
     async _refreshNotes() {
         const notes = await NotesAPI.getAllNotes();
         this._setNotes(notes);
-        if (notes.length > 0) {
-            this._setActiveNote(notes[0]);
-        }
+        // if (notes.length > 0) { //TOGGLE
+        //     this._setActiveNote(notes[0]);
+        // }
     }
     _setActiveNote(note) {
         this.activeNote = note;
@@ -22,7 +22,7 @@ export default class App {
     _setNotes(notes) {
         this.notes = notes;
         this.view.updateNoteList(notes);
-        this.view.updateNotePreviewVisibility(notes.length > 0);
+        // this.view.updateNotePreviewVisibility(notes.length > 0); //TOGGLE
     }
 
     _handlers() {

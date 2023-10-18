@@ -4,6 +4,7 @@ const User  = require('../models/user');
 module.exports.getAllNotes = async (req, res) => {
     const userid = req.user._id;
     const notes = await Note.find({ author: userid }).lean();
+    notes.sort((a, b) => b.updated_at - a.updated_at);
     res.send(notes);
 }
 module.exports.deleteNote = async (req, res) => {

@@ -30,9 +30,14 @@ export default class NotesView {
                 // update the note
                 this.onNoteEdit(updatedTitle, updatedBody);
                 // this.updateNote();
+                this.updateNotePreviewVisibility(false); //TOGGLE
             });
         });
 
+        // this.btnDismiss.addEventListener('click', () => {
+        //     console.log("Dismiss")   
+        //     this.updateNotePreviewVisibility(false);
+        // });
         this.updateNotePreviewVisibility(false); //hide the note preview by default because there is no note selected
     }
     //Is a private method because has a underscore in the beginning
@@ -78,7 +83,7 @@ export default class NotesView {
 
         });
         this.root.querySelector(`.notes__list-item[data-note-id="${note._id}"]`).classList.add('notes__list-item--selected');
-
+        this.updateNotePreviewVisibility(true); //TOGGLE
     }
     updateNotePreviewVisibility(visible) { // true or false for visible or not visible the note preview
         this.root.querySelector('.notes__preview').style.visibility = visible ? 'visible' : 'hidden';
