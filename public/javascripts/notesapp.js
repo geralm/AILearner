@@ -5,17 +5,17 @@ export default class App {
         this.notes = [];
         this.activeNote = null;
         this.view = new NotesView(root, this._handlers());
-        
+
         this._refreshNotes();
     }
     async _refreshNotes() {
         const notes = await NotesAPI.getAllNotes();
         this._setNotes(notes);
-        if(notes.length > 0){
-            this._setActiveNoteId(notes[0].id);
+        if (notes.length > 0) {
+            this._setActiveNote(notes[0]);
         }
     }
-    _setActiveNoteId(note) {
+    _setActiveNote(note) {
         this.activeNote = note;
         this.view.updateActiveNote(note);
     }
@@ -23,26 +23,34 @@ export default class App {
         this.notes = notes;
         this.view.updateNoteList(notes);
         this.view.updateNotePreviewVisibility(notes.length > 0);
-    } 
+    }
 
     _handlers() {
         return {
             onNoteSelect: noteId => {
-                console.log('Note select', noteId);
+                const selectedNote = this.notes.find(note => note._id === noteId);
+                this._setActiveNote(selectedNote);
                 // this._setActiveNote(noteId);
             },
-            onNoteAdd : () => {
-                console.log('Note add');
+            onNoteAdd: () => {
+                NotesAPI.createNote("title", "write something here...");
+                this._refreshNotes();
             },
             onNoteEdit: (newTitle, newBody) => {
-                console.log('Note edit');
+                NotesAPI.updateNote({
+                    _id: this.activeNote._id,
+                    title: newTitle,
+                    content: newBody
+                });
+                this._refreshNotes();
             },
             onNoteDelete: noteId => {
-                console.log('Note delete', noteId);
+                NotesAPI.deleteNotes(noteId);
+                this._refreshNotes();
             }
         };
     }
 
-   
+
 
 }

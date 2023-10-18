@@ -36,16 +36,16 @@ export default class NotesView {
         this.updateNotePreviewVisibility(false); //hide the note preview by default because there is no note selected
     }
     //Is a private method because has a underscore in the beginning
-    _createListItemHTML(id, title, body, updated) {
+    _createListItemHTML(id, title, content, updated) {
         const MAX_BODY_LENGTH = 60;
         return `
             <div class="notes__list-item" data-note-id="${id}">
                 <div class="notes__small-title">${title}</div>
                 <div class="notes__small-body">
-                    ${body.substring(0, MAX_BODY_LENGTH)}
-                    ${body.length > MAX_BODY_LENGTH ? '...' : '' /*if overflow lenght*/ } 
+                    ${content.substring(0, MAX_BODY_LENGTH) /*if undefined*/}
+                    ${content.length > MAX_BODY_LENGTH ? '...' : '' /*if overflow lenght*/} 
                     </div>
-                <div class="notes__small-updated">${updated.toLocaleString(undefined, { dateStyle: 'full', timeStyle: 'short' })}</div>
+                <div class="notes__small-updated">${/*updated.toLocaleString(undefined, { dateStyle: 'full', timeStyle: 'short' })*/ new Date(updated).toLocaleString()}</div>
             </div>
         `;
     }
@@ -53,7 +53,7 @@ export default class NotesView {
         const notesListContainer = this.root.querySelector('.notes__list');
         notesListContainer.innerHTML = '';
         for (const note of notes) {
-            const html = this._createListItemHTML(note.id, note.title, note.content, new Date(note.created_at));
+            const html = this._createListItemHTML(note._id, note.title, note.content, note.updated_at);
             notesListContainer.insertAdjacentHTML('beforeend', html);
         }
         //Setup the click handler for each note in the list
@@ -69,17 +69,18 @@ export default class NotesView {
 
         });
     }
-    updateActiveNote(note){
-        this.root.querySelector('.notes__title').value = note.title;
-        this.root.querySelector('.notes__body').value = note.body;
+    updateActiveNote(note) {
+        this.root.querySelector('.notes__title').value = note !== undefined ? note.title : 'title';
+        this.root.querySelector('.notes__body').value = note !== undefined ? note.content : 'write something here...';
         //Update the active note in the list of notes
         this.root.querySelectorAll('.notes__list-item').forEach(noteListItem => {
             noteListItem.classList.remove('notes__list-item--selected');
-            
+
         });
-        this.root.querySelector(`.notes__list-item[data-note-id="${note.id}"]`).classList.add('notes__list-item--selected');
+        this.root.querySelector(`.notes__list-item[data-note-id="${note._id}"]`).classList.add('notes__list-item--selected');
+
     }
-    updateNotePreviewVisibility(visible){ // true or false for visible or not visible the note preview
+    updateNotePreviewVisibility(visible) { // true or false for visible or not visible the note preview
         this.root.querySelector('.notes__preview').style.visibility = visible ? 'visible' : 'hidden';
     }
 }
