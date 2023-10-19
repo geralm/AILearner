@@ -5,6 +5,7 @@ const roomSchema = new Schema({
     name: {
         type: String,
         require: true,
+        unique: true
     },
     bot_role: { // AI Role in the room
         type:String,
@@ -13,11 +14,8 @@ const roomSchema = new Schema({
     description: {
         type: String,
         require: true,
-    },
-    conversations: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Conversation'
-    }],
+    }
+  
 
 });
 

@@ -13,7 +13,16 @@ const UserSchema = new Schema({
         require:true,
         unique:true
     },
+    created_at: {
+        type: Date,
+        default: Date.now(),
+    }, 
+    notes: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Note',
+    }]
+    
 });
-// UserSchema.plugin(passportLocalMongoose);
+UserSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model('User', UserSchema);
