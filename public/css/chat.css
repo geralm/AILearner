@@ -1,0 +1,88 @@
+#roomchat {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    /*#049dd9  */
+    color: black;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    /* Alinear contenido en la parte inferior */
+    /* position: relative; */
+}
+
+.chat_entry-items {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    /* Ajusta los valores según tus preferencias */
+    /* margin-top: auto; */
+    margin: auto;
+    margin-top: 13%;
+    width: 75%;
+    /* align-self: flex-end; */
+}
+
+.input-button-container {
+    display: flex;
+    align-items: center;
+}
+
+.submit-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.submit-button svg {
+    fill: #000;
+    /* Establece el color de relleno deseado */
+}
+
+.text-area-style {
+    width: 100%;
+    border: none;
+    resize: none;
+    outline: none;
+}
+
+.chat_footer {
+    font-size: small;
+    margin-bottom: 0.5rem;
+}
+
+.background-image {
+    /* flex: 1; */
+    /* Toma el espacio restante */
+    margin-top: 5%;
+    align-self: center
+}
+
+.chat_response {
+    /* background-color: #000; */
+    /* flex: 1; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chat_body{
+    flex-direction: column;
+    padding: 0;
+    margin: auto;
+}
+.chat_header {
+    margin-top: 1.5rem;
+}
+
+/* .chat_header {
+    background-color: #77dcf2;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+} */

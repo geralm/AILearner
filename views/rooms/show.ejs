@@ -1,25 +1,7 @@
 <%layout('layouts/rooms') %>
-<!-- <div class="d-flex"> -->
-<div>
-    <%layout('partials/notes') %>
-</div>
-<div>
-    <h1>Hola hola hola hola</h1>
-</div>
-<!-- </div> -->
-
-
-<!-- <div class="container"> -->
-<!-- <div class="notes-section"> -->
-<%//layout('partials/notes') %>
-<!-- Aquí puedes agregar contenido adicional para las notas -->
-<!-- </div>
-    <div class="main-section"> -->
-
-<!-- <h1>Room</h1>
-        <form action="/room/<%//TODO: set get response%>">
-            <input <%//TODO FORM CONTROL %> type="text" name="question[content]" id="question">
-            <button class="btn btn-success">send</button>
-        </form> -->
-<!-- </div>
-</div> -->
+    <div class="notes-section">
+        <%-include('../partials/notes') %>
+    </div>
+    <div class="main-section container-fluid d-flex">
+        <%-include('../partials/chat')%>
+    </div>

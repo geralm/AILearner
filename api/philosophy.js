@@ -4,7 +4,7 @@ const getIdeaById = async (id) => {
     //Function to get a single idea by id
     const response = await axios.get(`https://philosophyapi.pythonanywhere.com/api/ideas/${id}/`);
     return response.data;
-   
+
 };
 const getIdeasCount = async () => {
     //Function to get the total number of ideas
@@ -22,6 +22,22 @@ const getRandomIdea = async () => {
     const idea = await getIdeaById(id);
     return idea;
 }
-getRandomIdea()
+const getIdeaByWord = async (word) => {
+    //Function to get an idea by a word
+    const response = await axios.get(`https://philosophyapi.pythonanywhere.com/api/ideas/?search=${word}`);
+    return response.data;
+}
+
+getIdeaByWord('learn')
     .then(idea => console.log(idea))
     .catch(error => console.log(error));
+getIdeaByWord('studying')
+    .then(idea => console.log(idea))
+    .catch(error => console.log(error));
+getIdeaByWord('education')
+    .then(idea => console.log(idea))
+    .catch(error => console.log(error));
+
+// getRandomIdea()
+//     .then(idea => console.log(idea))
+//     .catch(error => console.log(error));

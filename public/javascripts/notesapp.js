@@ -42,6 +42,7 @@ export default class App {
                     title: newTitle,
                     content: newBody
                 });
+                console.log("on note edit")
                 this._refreshNotes();
             },
             onNoteDelete: noteId => {
