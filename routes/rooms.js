@@ -6,8 +6,7 @@ const {renderRoom , fetchQuestionFromAPIs } = require('../controllers/rooms');
 // router.route('/') 
 //     .get(catchAsync());
 router.route('/:id')
-    .get(catchAsync(renderRoom));
-router.route('/:id/questions')
+    .get(catchAsync(renderRoom))
     .post(catchAsync(fetchQuestionFromAPIs));
 //TODO: add middleware to check if the user is logged in
 module.exports = router;

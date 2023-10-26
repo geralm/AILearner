@@ -1,7 +1,7 @@
-<%layout('layouts/rooms', {room: room}) %>
+<%layout('layouts/rooms', {room: response}) %>
     <div class="notes-section">
         <%-include('../partials/notes') %>
     </div>
     <div class="main-section container-fluid d-flex">
-        <%- include('../partials/chat', { room: room });%>
+        <%- include('../partials/chat', { response: response });%>
     </div>

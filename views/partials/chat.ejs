@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="chat_entry-items">
-            <form action="/room/<%=room._id%>/questions" method="POST" class="validated-form">
+            <form action="/room/<%=response.room._id%>" method="POST" class="validated-form">
                 <div class="input-button-container">
                     <textarea class="text-area-style" placeholder="ask me something..." name="chat[question]"
                         id="question" cols="45" rows="1" required></textarea>
