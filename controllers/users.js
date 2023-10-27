@@ -23,7 +23,7 @@ module.exports.renderLogin = (req, res) => {
     res.render('users/login');
 }
 module.exports.login = (req, res) => {
-    //TODO: login home page
+   
     req.flash('success', '¡Welcome again!');
     var redirectUrl = req.session.returnTo || '/room/6514aa8725e5b7bac35786dc';
     delete req.session.returnTo;

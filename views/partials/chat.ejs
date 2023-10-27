@@ -4,24 +4,42 @@
         <h1 class="chat_title">Chat</h1>
     </div>
     <div class="chat_body container-fluid justify-content-center">
-        <div class="chat_response justify-content-center">
+        <% if(!info.response.gpt) { %>
             <div class="background-image">
                 <img src="../icons/aprender-en-linea.gif" alt="GIF animado" width="300" height="300">
             </div>
+        <% } %>
+        <div class="chat_response">
+            <% if(info.response.gpt){%>
+                    <div class="question">
+                        <p>
+                            <%=info.question%>
+                        </p>
+                    </div>
+                    <div class="answer">
+                        <p>
+                        <%=info.response.gpt%>
+                        </p>
+                        <audio controls>
+                            <source src="data:audio/wav;base64,{{audioData}}" type="audio/wav">
+                        </audio>
+                    </div>
+            <% } %>
         </div>
-        <div class="chat_entry-items">
-            <form action="/room/<%=response.room._id%>" method="POST" class="validated-form">
-                <div class="input-button-container">
-                    <textarea class="text-area-style" placeholder="ask me something..." name="chat[question]"
-                        id="question" cols="45" rows="1" required></textarea>
-                    <button type="submit" class="submit-button px-1">
-                        <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg">
-                            <image href="../icons/enviar.svg" width="25" height="25" />
-                        </svg>
-                    </button>
-                </div>
-            </form>
-        </div>
+
+    </div>
+    <div class="chat_entry-items">
+        <form action="/room/<%=info.room._id%>" method="POST" class="validated-form">
+            <div class="input-button-container">
+                <textarea class="text-area-style" placeholder="ask me something..." name="chat[question]" id="question"
+                    cols="45" rows="1" required></textarea>
+                <button type="submit" class="submit-button px-1">
+                    <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg">
+                        <image href="../icons/enviar.svg" width="25" height="25" />
+                    </svg>
+                </button>
+            </div>
+        </form>
     </div>
     <div class="chat_footer ">
         <h6 class="d-inline">&copy; Lumi 2023. </h6>
