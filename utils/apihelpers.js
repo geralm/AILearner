@@ -42,7 +42,6 @@ const getScoreName = (score_tag) => {
 }
 
 module.exports.buildResponse = (room, question,gpt,google, meaningCloud) => {
-    
     return {
         room: room,
         question: question,

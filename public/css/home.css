@@ -149,27 +149,4 @@ nav .btn-init {
          display: none;
     }
 }
-/*Room cards*/
-.room-card {
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("../images/butterfly.jpg"); */
-    
-    /* background-color: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)); */
-    background-color: rgba(0, 0, 0, 0.6); 
-    transition: background-color 0.5s ease; /* Transición de color de fondo */
-    width: 23rem;
-    height: 30rem;
-    text-align: center;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    overflow: hidden; /* Oculta el contenido que se desborda */
-}
 
-.room-card:hover{
-    background-color: rgba(97, 97, 97, 0.201);
-}
-
-.room-card img {
-    max-width: 100%; /* Establece el ancho máximo de la imagen al 100% del contenedor (.room-card) */
-    max-height: 100%; /* Establece la altura máxima de la imagen al 100% del contenedor (.room-card) */
-}

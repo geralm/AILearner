@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Learner</title>
+    <title>Lumi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/home.css">
@@ -19,7 +19,7 @@
         <header class="container-fluid mb-auto bg-fancynav align-items-center">
             <div class="row">
                 <div class="col-2">
-                    <h3 class="float-md-left mb-0 text-white">AI Learner</h3>
+                    <h3 class="float-md-left mb-0 text-white">Lumi</h3>
                 </div>
                 <div class="col-8">
                     <nav class="nav nav-masthead justify-content-end float-md-right">
@@ -31,48 +31,23 @@
                     </nav>
                 </div>
                 <div class="col-2 align-items-center">
-                    <a class="btn-try"="/">Get started</a>
+                    <a class="btn-try" href="/room/6514aa8725e5b7bac35786dc">Get started</a>
                 </div>
             </div>
         </header>
         <main class="text-center px-3 mt-5">
             <h1 class="main-txt">Explore the Future of <br> Learning</h1>
-            <a href="/" class="btn font-weight-bold border-white btn-init">Start</a>
+            <a href="/room/6514aa8725e5b7bac35786dc" class="btn font-weight-bold border-white btn-init">Start</a>
         </main>
     </div>
-    <section class="news-section">
-        <h2 class="text-white mb-5">Lastest Updates</h2>
+    
 
-    </section>
-
-    <section class="room-section">
-        <h2 class="text-white mb-5">Rooms</h2>
-        <div class="d-flex container-fluid justify-content-center">
-            <!-- <img src="images/astronaut.jpg" alt=""> -->
-            <div class="card room-card">
-                <h1>Ask me...</h1>
-                <a href="/room/6514aa8725e5b7bac35786dc">Ask room</a>
-            </div>
-            <div class="card room-card">
-                <h1>Coming soon...</h1>
-            </div>
-
-
-            <div class="card room-card">
-                <h1>Coming soon...</h1>
-
-            </div>               
-
-        </div>
-
-        <!-- Contenido de la sección de noticias aquí 
-         Contenido de la sección de room aquí -->
-    </section>
+    <%- include("partials/allrooms") %>
     <footer class="footer align-items-center">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-4">
-                    <p>&copy; 2023 AI Learner </p>
+                    <p>&copy; 2023 Lumi</p>
                 </div>
                 <div class="col-6">
                     <a href="">Contact</a>

@@ -8,24 +8,29 @@
             <div class="background-image">
                 <img src="../icons/aprender-en-linea.gif" alt="GIF animado" width="300" height="300">
             </div>
-        <% } %>
-        <div class="chat_response">
-            <% if(info.response.gpt){%>
-                    <div class="question">
-                        <p>
-                            <%=info.question%>
-                        </p>
-                    </div>
-                    <div class="answer">
-                        <p>
-                        <%=info.response.gpt%>
-                        </p>
-                        <audio controls>
-                            <source src="data:audio/wav;base64,{{audioData}}" type="audio/wav">
-                        </audio>
-                    </div>
             <% } %>
-        </div>
+                <div class="chat_response">
+                    <% if(info.response.gpt){%>
+                        <div class="question">
+                            <% if (!info.response.meaningCloud) {%>
+                                <p>
+                                    <%=info.question%>
+                                </p>
+                                <% } %>
+
+                        </div>
+                        <div class="answer">
+                            <p>
+                                <%=info.response.gpt%>
+                            </p>
+                            <% if(info.response.google){%>
+                                <audio controls>
+                                    <source src="data:audio/wav;base64,<%=info.response.google%>" type="audio/wav">
+                                </audio>
+                                <% } %>
+                        </div>
+                        <% } %>
+                </div>
 
     </div>
     <div class="chat_entry-items">

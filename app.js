@@ -3,6 +3,7 @@ const roomsRoutes = require('./routes/rooms');
 const noteApiRoutes = require('./routes/note');
 const ExpressError = require('./utils/ExpressError')
 const userRoutes = require('./routes/users');
+const infoRoutes = require('./routes/ínfo');
 app.use((req, res, next) => {
     res.locals.currentUser = req.user;
     res.locals.success = req.flash('success');
@@ -12,6 +13,7 @@ app.use((req, res, next) => {
 app.use('/', userRoutes)
 app.use('/room', roomsRoutes);
 app.use('/note', noteApiRoutes);
+app.use('/info', infoRoutes);
 app.get('/', (req, res) => {
     res.render('home');
 });

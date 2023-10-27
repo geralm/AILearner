@@ -23,7 +23,7 @@ module.exports.gptapi = async (question, age, words_limit) => {
     try {
         const response = await openai.chat.completions.create({
             model: "gpt-4",
-            messages: [{ role: "system", content: `Eres el mejor explicando cualquier tema de una forma sencilla y entendible en ${words_limit} apalabras para alguien de ${age} años `  },
+            messages: [{ role: "system", content: `Eres el mejor explicando cualquier tema de una forma sencilla y entendible en ${words_limit} a palabras para alguien de ${age} años `  },
             { role: "assistant", content: question }],
             // temperature: 1,
         });

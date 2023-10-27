@@ -44,9 +44,21 @@ async function quickStart() {
 module.exports.textToSpeechapi = async (text) => {
   try {
     const requests = {
-      input: { text: text },
-      voice: { languageCode: 'es-ES', ssmlGender: 'NEUTRAL2' },
-      audioConfig: { audioEncoding: 'MP3' }
+      "audioConfig": {
+        "audioEncoding": "LINEAR16",
+        "effectsProfileId": [
+          "small-bluetooth-speaker-class-device"
+        ],
+        "pitch": 0,
+        "speakingRate": 1.05
+      },
+      "input": {
+        "text": text
+      },
+      "voice": {
+        "languageCode": "es-US",
+        "name": "es-US-Neural2-C"
+      }
     };
     const [response] = await client.synthesizeSpeech(requests);
 
