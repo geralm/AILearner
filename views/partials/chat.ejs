@@ -1,23 +1,31 @@
 <link rel="stylesheet" href="/css/chat.css">
 <div class="chat container-fluid text-center" id="roomchat">
     <div class="chat_header">
-        <h1 class="chat_title">Chat</h1>
+        <h1 class="chat_title"><%= info.room.name %></h1>
     </div>
     <div class="chat_body container-fluid justify-content-center">
         <% if(!info.response.gpt) { %>
             <div class="background-image">
                 <img src="../icons/aprender-en-linea.gif" alt="GIF animado" width="300" height="300">
             </div>
-            <% } %>
+        <% } %>
                 <div class="chat_response">
                     <% if(info.response.gpt){%>
                         <div class="question">
+
                             <% if (!info.response.meaningCloud) {%>
                                 <p>
                                     <%=info.question%>
                                 </p>
+                            <% } %>
+                            <% if (info.response && info.response.meaningCloud && info.response.meaningCloud.sentence_list) { %>
+                                    <p>
+                                        <% info.response.meaningCloud.sentence_list.forEach(element => {  %>
+                                            <span class="<%=element.style_class%>_underline"><%= element.sentence %></span>
+                                        <% }); %>
+                                    </p>
                                 <% } %>
-
+                                
                         </div>
                         <div class="answer">
                             <p>

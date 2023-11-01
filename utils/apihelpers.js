@@ -9,10 +9,12 @@ const analizeSentimentJson = (jsontext) => {
     const subjectivity = jsontext.subjectivity === "SUBJECTIVE" ? "Subjective" : "Objective";
     const general_score_tag = jsontext.score_tag;
     const sentence_list = jsontext.sentence_list.map(sentence => {
+        const score_name = getScoreName(sentence.score_tag)
         return {
             sentence: sentence.text,
             score_tag: sentence.score_tag,
-            score_name: getScoreName(sentence.score_tag),
+            score_name: score_name,
+            style_class: score_name.toLowerCase().replace(" ","")
         }
     });
     return  {ironic : ironic, 
@@ -48,7 +50,7 @@ module.exports.buildResponse = (room, question,gpt,google, meaningCloud) => {
         response: {
             gpt: gpt,
             google: google,
-            meaningCloud: meaningCloud ? analizeSentimentJson(meaningCloud): undefined
+            meaningCloud: meaningCloud!==undefined? analizeSentimentJson(meaningCloud): undefined
         }
     }
 }

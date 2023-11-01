@@ -4,7 +4,6 @@ require('dotenv').config({ path: path.join(__dirname, '../config/.env') });
 
 
 const textToSpeech = require('@google-cloud/text-to-speech');
-// require('dotenv').config(); //FIXME: app.js already has this line
 
 //Dot env
 const fs = require('fs');
