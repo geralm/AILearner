@@ -6,22 +6,46 @@
     --button-border: 2px solid #f2f2f2;
     --button-shadow: #f2f2f2 (0, 0, 0, 0.25) 0 0.05em 0 0.1rem;
 }
+html,
 body {
     font-family: "Roboto", sans-serif;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    display: flex; /* Hace que los elementos hijos se comporten como flex-items */
+    color: #ffffff;
+    display: flex; /*Hace que los elementos hijos se comporten como flex-items*/
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    
 }
 .notes-section {
-    background-color: #0d0d0d;
-    flex: 15; /* Cambiamos flex: 1 a flex: 15 para que ocupe el 15% */
-    padding: 20px;
-    min-width: 150px; /* Establece un ancho mínimo para evitar que sea demasiado estrecho */
+    min-width: auto;
+    /* flex: 15; Cambiamos flex: 1 a flex: 15 para que ocupe el 15% */
+    /* padding: 20px; */
+    /* min-width: 150px; Establece un ancho mínimo para evitar que sea demasiado estrecho */
 }
 
 .main-section {
-    background-color: gray;
-    flex: 85; /* Cambiamos flex: 2 a flex: 85 para que ocupe el 85% */
-    padding: 20px;
+    /* background-color: rgb(5, 120, 124); */
+    /* flex: 85; Cambiamos flex: 2 a flex: 85 para que ocupe el 85% */
+    min-width: 80%;
+    /* display: block; */
+}
+.strongpositive_underline {
+    border-bottom: 5px solid #73ba9b;
+}
+.positive_underline {
+    border-bottom: 5px solid #d5f2e3;
+}
+.neutral_underline {
+    border-bottom: 5px solid #fdf8e1;
+}
+.negative_underline {
+    border-bottom: 5px solid #f9b5ac;
+}
+.strongnegative_underline {
+    border-bottom: 5px solid #d90429;
+}
+.withoutsentiment_underline {
+    border-bottom: 5px solid #f2f2f2;
 }

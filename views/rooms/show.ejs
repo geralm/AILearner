@@ -1,14 +1,7 @@
-<%layout('layouts/boilerplate') %>
-<div class="container">
+<%layout('layouts/rooms', {room: info}) %>
     <div class="notes-section">
-        <h1>Notes</h1>
-        <!-- Aquí puedes agregar contenido adicional para las notas -->
+        <%-include('../partials/notes') %>
     </div>
-    <div class="main-section">
-        <h1>Room</h1>
-        <!-- Aquí puedes colocar el contenido de la conversación -->
+    <div class="main-section container-fluid d-flex">
+        <%- include('../partials/chat', { response: info });%>
     </div>
-</div>
-
-
-    

@@ -27,6 +27,6 @@ const UserSchema = new Schema({
     }]
     //usedhours
 });
-// UserSchema.plugin(passportLocalMongoose);
+UserSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model('User', UserSchema);

@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@500&family=Nunito+Sans:opsz,wght@6..12,600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+#roomchat {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    /*#049dd9  */
+    color: black;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+    /* overflow: hidden; */
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: end;
+    /* grid-template-rows: auto 1fr auto auto; */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 50px 50px;
+    /* Alinear contenido en la parte inferior */
+    /* position: relative; */
+}
+.chat_header {
+    font-family: 'Edu TAS Beginner', cursive;
+    margin-top: 1.5rem;
+    grid-row: 1;
+    border-bottom: 7px solid #049dd9;
+    border-radius: 15px 15px 10px 10px;
+}
+
+
+
+.background-image {
+    /* flex: 1; */
+    /* Toma el espacio restante */
+    align-self: center;
+    grid-row: 1;
+}
+
+.chat_body {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    grid-row: 2;
+    background-color: #ffffff;
+    
+}
+
+.chat_response {
+    display: grid;
+    grid-template-rows: 1fr 2fr ;
+}
+
+/*Inside chat body*/
+
+.question{
+    font-size: 20px;
+    grid-row: 1;
+    align-self: self-start;
+    /* border-bottom: 1px solid #000; Puedes ajustar el grosor y el color de la línea según tus preferencias */
+}
+.answer{
+    font-size: 25px;
+    /* font-weight: bold; */
+    grid-row: 2;
+    align-self: self-end;
+}
+
+/*Chat header*/
+
+/*Chat footer*/
+
+.chat_entry-items {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    /* Ajusta los valores según tus preferencias */
+    /* margin-top: auto; */
+    /* margin: auto; */
+    align-self: flex-end;
+    justify-content: center;
+    width: 75%;
+    margin: auto;
+    grid-row: 3;
+    /* align-self: flex-end; */
+}
+
+.input-button-container {
+    display: flex;
+    align-items: center;
+}
+
+.submit-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.submit-button svg {
+    fill: #000;
+    /* Establece el color de relleno deseado */
+}
+
+.text-area-style {
+    width: 100%;
+    border: none;
+    resize: none;
+    outline: none;
+}
+
+.chat_footer {
+    font-size: small;
+    margin-bottom: 0.5rem;
+    align-self: self-end;
+    grid-row: 4;
+}
+/* .chat_header {
+    background-color: #77dcf2;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+} */
