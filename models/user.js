@@ -13,6 +13,19 @@ const UserSchema = new Schema({
         require:true,
         unique:true
     },
+    created_at: {
+        type: Date,
+        default: Date.now(),
+    },
+    birthdate:{
+        type: Date,
+        require:true,
+    },
+    notes: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Note',
+    }]
+    //usedhours
 });
 // UserSchema.plugin(passportLocalMongoose);
 

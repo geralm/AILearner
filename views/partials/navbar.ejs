@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="/css/navbar.css">
+<nav class="navbar navbar-expand-lg navbar-light bg-nav">
+    <div class="container-fluid">
+        <div class="justify-content-start">
+
+            <a class="navbar-brand navtitle" href="/">LUMI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
+                <ul class="navbar-nav container-fluid justify-content-between">
+                    <div class="justify-content-center">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle navtext" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Rooms
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <% rooms.forEach(element=>{%>
+                                    <li><a class="dropdown-item" href="/room/<%=element._id%>">
+                                            <%=element.name%>
+                                        </a></li>
+                                    <% }); %>
+                            </ul>
+                        </li>
+                    </div>
+                    <div class="justify-content-end">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/logout"><span
+                                    class="navtext">logout</span></a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

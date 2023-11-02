@@ -37,52 +37,14 @@
         </header>
         <main class="text-center px-3 mt-5">
             <h1 class="main-txt">Explore the Future of <br> Learning</h1>
-            <a href="/" class="btn font-weight-bold border-white btn-init">Start</a>
+            <a href="/room/hall" class="btn font-weight-bold border-white btn-init">Start</a>
         </main>
     </div>
     <section class="news-section">
         <h2 class="text-white mb-5">Lastest Updates</h2>
 
-    </section>
-
-    <section class="room-section">
-        <h2 class="text-white mb-5">Rooms</h2>
-        <div class="d-flex container-fluid justify-content-center">
-            <!-- <img src="images/astronaut.jpg" alt=""> -->
-            <div class="card room-card">
-                <h1>Hola</h1>
-                <a href="/rooms/">Ask room</a>
-            </div>
-            <div class="card room-card">
-                <h1>Coming soon...</h1>
-            </div>
-
-
-            <div class="card room-card">
-                <h1>Coming soon...</h1>
-
-            </div>               
-
-        </div>
-
-        <!-- Contenido de la sección de noticias aquí 
-         Contenido de la sección de room aquí -->
-    </section>
-    <footer class="footer align-items-center">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-4">
-                    <p>&copy; 2023 AI Learner </p>
-                </div>
-                <div class="col-6">
-                    <a href="">Contact</a>
-                </div>
-
-            </div>
-        </div>
-    </footer>
-
-
+    <%- include("partials/allrooms") %>
+    <%-include("partials/footer") %>
     <!-- </div> -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

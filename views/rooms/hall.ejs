@@ -1,0 +1,8 @@
+<%layout('layouts/boilerplate')%>
+<%-include('../partials/navbar', {rooms:rooms}) %>
+
+<div class="container-fluid justify-content-center mt-5">
+    <%-include("../partials/roomcards"),{rooms:rooms} %>
+</div>
+
+
