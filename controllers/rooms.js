@@ -3,59 +3,7 @@ const { gptapi } = require('../api/gpt');
 const { meaningcloudapi } = require('../api/meaningCloud');
 const { textToSpeechapi } = require('../api/googletxtspeech');
 const {buildResponse} = require('../utils/apihelpers');
-const { google } = require('@google-cloud/text-to-speech/build/protos/protos');
-//FIXME: remove this dummy response
-const dummyResponse ={
-    room: "This is a dummy text room",
-    question: "This is a dummy text question",
-    response: {
-        gpt: "This is a dummy text gpt",
-        google: "This is a dummy text google",
-        meaningCloud: {
-            ironic: "Ironic",
-            subjectivity: "Subjective",
-            general_score_tag: "P+",
-            sentence_list: [
-                {
-                    sentence: "This is a dummy text sentence 1",
-                    score_tag: "P+",
-                    score_name: "Strong Positive", 
-                    style_class: "strongpositive"
-                },
-                {
-                    sentence: "This is a dummy text sentence 2",
-                    score_tag: "P",
-                    score_name: "Positive",
-                    style_class: "positive" 
-                },
-                {
-                    sentence: "This is a dummy text sentence 3",
-                    score_tag: "NEU",
-                    score_name: "Neutral", 
-                    style_class: "neutral"
-                },
-                {
-                    sentence: "This is a dummy text sentence 4 ",
-                    score_tag: "N",
-                    score_name: "Negative",
-                    style_class: "negative"
-                },
-                {
-                    sentence: "This is a dummy text sentence 5",
-                    score_tag: "N+",
-                    score_name: "Strong Negative",
-                    style_class: "strongnegative"
-                },
-                {
-                    sentence: "This is a dummy text sentence 6",
-                    score_tag: "NONE",
-                    score_name: "Without Sentiment",
-                    style_class: "withoutsentiment"
-                },
-            ]
-        }
-    }
-}
+
 
 
 
@@ -64,6 +12,10 @@ module.exports.renderRoom = async (req, res) => {
     const room = await Room.findById(id).lean();//.populate('conversations');
     const info = buildResponse(room, undefined, undefined , undefined, undefined);
     res.render('rooms/show', { info:info });
+}
+module.exports.renderHall = async (req, res) => {
+    const rooms = await Room.find({}).select('name description img').lean();
+    res.render('rooms/hall', {rooms: rooms, info: undefined});
 }
 
 module.exports.fetchQuestionFromAPIs = async (req, res) => {
@@ -77,7 +29,7 @@ module.exports.fetchQuestionFromAPIs = async (req, res) => {
         const info = buildResponse(room, question,gptResponse,googleResponse,meaningCloudResponse);
         res.render('rooms/show',{info: info});
     }else{
-        req.flash('error', e.message);
+        req.flash('error', gptResponse.error);
         const info = buildResponse(room, question, "something went wrong!",undefined,meaningCloudResponse);
         res.render('rooms/show',{info: info});
     }

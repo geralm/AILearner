@@ -2,13 +2,14 @@
     <div class="container d-flex justify-content-center align-items-center mt-5 ">
         <!-- <div class="row"> -->
         <div class="col-md-6 col-xl-6 mt-5 ">
-            <div class="card">
+            <div class="card-login">
                 <div class="card-body">
                     <div class="card-title">Sign up</div>
                     <form action="/register" method="POST" class="validated-form" novalidate>
                         <div class="mb-3">
                             <label class="form-label" for="username">Username</label>
-                            <input class="form-control" type="text" id="username" name="username" placeholder="username"autofocus required>
+                            <input class="form-control" type="text" id="username" name="username" placeholder="username"
+                                autofocus required>
                             <div class="invalid-feedback">
                                 required!
                             </div>
@@ -16,8 +17,7 @@
                         <div class="mb-3">
                             <label class="form-label" for="email">Email</label>
                             <input class="form-control" type="text" id="email" name="email" autofocus
-                                aria-describedby="emailHelp" placeholder="Email"
-                                 required>
+                                aria-describedby="emailHelp" placeholder="Email" required>
                             <div class="invalid-feedback">
                                 required!
                             </div>
@@ -28,6 +28,13 @@
                             <div class="invalid-feedback">
                                 required!
                             </div>
+                        </div>
+                        <label for="birthdate">Birthdate</label>
+                        <!-- FIXME: Remember validate date in client side  -->
+                        <input id="birthdate" class="form-control" type="date" name="birthdate"
+                            required />
+                        <div class="invalid-feedback">
+                            required!
                         </div>
                         <span class="d-flex justify-content-center align-items-center mt-4">
                             <button type="submit" class="btn btn-success btn-block btn-login">Sign up</button>

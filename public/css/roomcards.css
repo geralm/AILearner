@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@500&family=Nunito+Sans:opsz,wght@6..12,600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+.room-card {
+    background-color: #0d0d0d;
+    font-size: larger;
+    margin: 0px 10px 10px 10px;
+    width: 23rem;
+    height: 30rem;
+    display: flex;
+    position: relative;
+    color: #f2f2f2;
+    border: 2px solid #3a506b;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: rgba(5, 199, 242, 0.25) 0px 25px 25px, rgba(5, 199, 242, 0.25) 0px -12px 30px, rgba(5, 199, 242, 0.25) 0px 4px 6px, rgba(5, 199, 242, 0.25) 0px 12px 13px,rgba(5, 199, 242, 0.25) 0px -3px 5px;
+    min-width: 20em;
+    min-height: auto;
+    transition: box-shadow 0.5s ease;
+}
+.room-card:hover{
+    box-shadow: rgba(5, 199, 242, 0.25) 0px 25px 25px, rgba(5, 199, 242, 0.25) 0px -12px 30px, rgba(5, 199, 242, 0.25) 0px 4px 6px, rgba(5, 199, 242, 0.25) 0px 12px 13px,rgba(5, 199, 242, 0.25) 0px -3px 5px;
+}
+
+.room-card img {
+    object-fit: cover;
+    width: 95%;
+    height: 90%;
+    position: absolute;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+    color: white; /* Asegura que el texto sea legible en el fondo oscuro */
+    padding: 10px; /* Añade espacio interior para el contenido */
+}
+
+.btn-go {
+    font-size: 1.9rem;
+    font-weight: bolder;
+    background-color: #5bc0be;
+    border: none;
+    color: #0b132b;
+    display: inline-block;
+    transition: background-color 0.5s ease;
+    margin-top: 10px; /* Agrega margen entre el texto y el botón */
+    z-index: 2;
+
+}
+
+.btn-go:hover {
+    color: #0b132b;
+    background-color: #6fffe9; 
+}
+
+.card-body h1{
+    font-family: 'Edu TAS Beginner', cursive;
+
+    display: flex;
+    justify-content: start;
+    z-index: 2; /* Asegura que el contenido esté sobre el fondo */
+}

@@ -17,11 +17,15 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now(),
     },
+    birthdate:{
+        type: Date,
+        require:true,
+    },
     notes: [{
         type: Schema.Types.ObjectId,
         ref: 'Note',
     }]
-    
+    //usedhours
 });
 UserSchema.plugin(passportLocalMongoose);
 

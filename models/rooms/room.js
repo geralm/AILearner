@@ -14,9 +14,15 @@ const roomSchema = new Schema({
     description: {
         type: String,
         require: true,
-    }
-  
-
+    },
+    img:{
+        type: String,
+        require: true,
+    },
+    conversations: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Conversation'
+    }]
 });
 
 module.exports = mongoose.model('Room', roomSchema);

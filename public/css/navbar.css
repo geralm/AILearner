@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@500&family=Nunito+Sans:opsz,wght@6..12,600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.bg-nav{
+    color: #fff;
+    background-color: #14213d90;
+}
+.navbar{
+    background-color: #14213d90;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navtext{
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: #f2f2f2;
+    /* margin-left: 5rem; */
+    border-bottom: 0.25rem solid transparent;
+    letter-spacing: 0.18rem;
+    
+}
+.navtext:hover{
+    color: #fff;
+    border-bottom-color: #f2a30f;
+}
+
+.navtitle{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+
