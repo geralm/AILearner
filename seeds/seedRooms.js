@@ -15,7 +15,7 @@ const seedRooms = async()=>{
     const qRoom = new Room({
         name: "Question Room",
         bot_role: "Eres el mejor explicando cualquier tema de una forma sencilla y entendible con las siguientes caracteristicas: ",
-        description: "Ask me anything school",
+        description: "Ask me anything",
         conversations: [],
         img: "library.jpg"
     });

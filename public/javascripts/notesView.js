@@ -77,10 +77,8 @@ export default class NotesView {
     updateActiveNote(note) {
         this.root.querySelector('.notes__title').value = note !== undefined ? note.title : 'title';
         this.root.querySelector('.notes__body').value = note !== undefined ? note.content : 'write something here...';
-        //Update the active note in the list of notes
         this.root.querySelectorAll('.notes__list-item').forEach(noteListItem => {
             noteListItem.classList.remove('notes__list-item--selected');
-
         });
         this.root.querySelector(`.notes__list-item[data-note-id="${note._id}"]`).classList.add('notes__list-item--selected');
         this.updateNotePreviewVisibility(true); //TOGGLE

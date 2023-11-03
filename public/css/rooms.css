@@ -31,21 +31,3 @@ body {
     min-width: 80%;
     /* display: block; */
 }
-.strongpositive_underline {
-    border-bottom: 5px solid #73ba9b;
-}
-.positive_underline {
-    border-bottom: 5px solid #d5f2e3;
-}
-.neutral_underline {
-    border-bottom: 5px solid #fdf8e1;
-}
-.negative_underline {
-    border-bottom: 5px solid #f9b5ac;
-}
-.strongnegative_underline {
-    border-bottom: 5px solid #d90429;
-}
-.withoutsentiment_underline {
-    border-bottom: 5px solid #f2f2f2;
-}
