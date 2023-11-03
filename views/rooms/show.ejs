@@ -1,7 +1,30 @@
 <%layout('layouts/rooms', {room: info}) %>
-    <div class="notes-section">
-        <%-include('../partials/notes') %>
-    </div>
-    <div class="main-section container-fluid d-flex">
-        <%-include('../partials/chat', { response: info });%>
+    <div class="container-fluid main-section">
+        <div class="sidebar-section">
+            <div class="features_dropdown container-fluid">
+                <div class="btn-group btn-features dropend">
+                    <button type="button" class="btn dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
+                      <span class="text-features">Plugins</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <% features.forEach(feature=> { %>
+                            <li><a class="dropdown-item text-center" href="" id="<%=feature._id%>"><span class="text-item"><%=feature.name %></span></a></li>
+                              
+                        <% }) %>
+                    </ul>
+                  </div>
+    
+            </div>
+            <div class="actual_features">
+                <% features.forEach(feature=> { %>
+                    <%-include(`../features/${feature.partial_name}`) %>
+                        <% }) %>
+            </div>
+            <div class="controls">
+                <a class="btn btn-hall" href="/room/hall">Go to hall</a>
+            </div>
+        </div>
+        <div class="chat-section">
+            <%-include('../partials/chat', { response: info });%>
+        </div>
     </div>

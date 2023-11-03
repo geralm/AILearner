@@ -3,7 +3,7 @@ const { gptapi } = require('../api/gpt');
 const { meaningcloudapi } = require('../api/meaningCloud');
 const { textToSpeechapi } = require('../api/googletxtspeech');
 const {buildResponse} = require('../utils/apihelpers');
-
+const {features} = require('../public/javascripts/features');
 
 
 
@@ -11,7 +11,7 @@ module.exports.renderRoom = async (req, res) => {
     const { id } = req.params;
     const room = await Room.findById(id).lean();//.populate('conversations');
     const info = buildResponse(room, undefined, undefined , undefined, undefined);
-    res.render('rooms/show', { info:info });
+    res.render('rooms/show', { info:info, features: features});
 }
 module.exports.renderHall = async (req, res) => {
     const rooms = await Room.find({}).select('name description img').lean();
@@ -31,7 +31,7 @@ module.exports.fetchQuestionFromAPIs = async (req, res) => {
     }else{
         req.flash('error', gptResponse.error);
         const info = buildResponse(room, question, "something went wrong!",undefined,meaningCloudResponse);
-        res.render('rooms/show',{info: info});
+        res.render('rooms/show',{info: info, features: features});
     }
        
 }
