@@ -21,10 +21,14 @@ const UserSchema = new Schema({
         type: Date,
         require:true,
     },
-    notes: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Note',
-    }]
+    level:{
+        type: Number, 
+        default: 0,
+    },
+    exp:{
+        type:Number,
+        default: 0,
+    }
     //usedhours
 });
 UserSchema.plugin(passportLocalMongoose);

@@ -18,6 +18,16 @@ const noteSchema = new Schema({
     updated_at: {
         type: Date,
         default: Date.now()        
+    },
+    plugin:{
+        type: Schema.Types.ObjectId,
+        ref: 'Plugin', 
+        require: true
+    },
+    room:{
+        type:Schema.Types.ObjectId,
+        ref: 'Room',
+        require: true,
     }
 });
 // Middleware para actualizar updated_at antes de cada save o update
