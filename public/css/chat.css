@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@500&family=Nunito+Sans:opsz,wght@6..12,600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 #roomchat {
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
     background-color: #fff;
     /*#049dd9  */
@@ -113,6 +113,30 @@
     align-self: self-end;
     grid-row: 4;
 }
+@media only screen and (max-width: 600px){
+    .chat_footer{
+        font-size: 10px;
+    }
+}
+.strongpositive_underline {
+    border-bottom: 5px solid #73ba9b;
+}
+.positive_underline {
+    border-bottom: 5px solid #d5f2e3;
+}
+.neutral_underline {
+    border-bottom: 5px solid #fdf8e1;
+}
+.negative_underline {
+    border-bottom: 5px solid #f9b5ac;
+}
+.strongnegative_underline {
+    border-bottom: 5px solid #d90429;
+}
+.withoutsentiment_underline {
+    border-bottom: 5px solid #f2f2f2;
+}
+
 /* .chat_header {
     background-color: #77dcf2;
     padding: 10px;

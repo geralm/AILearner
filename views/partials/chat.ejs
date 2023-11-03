@@ -44,7 +44,7 @@
     <div class="chat_entry-items">
         <form action="/room/<%=info.room._id%>" method="POST" class="validated-form">
             <div class="input-button-container">
-                <textarea class="text-area-style" placeholder="ask me something..." name="chat[question]" id="question"
+                <textarea class="text-area-style" placeholder="<%=info.room.description%>" name="chat[question]" id="question"
                     cols="45" rows="1" required></textarea>
                 <button type="submit" class="submit-button px-1">
                     <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg">
