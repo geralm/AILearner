@@ -1,0 +1,27 @@
+[debug] [2023-11-04T00:06:21.163Z] ----------------------------------------------------------------------
+[debug] [2023-11-04T00:06:21.165Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Esteb\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-11-04T00:06:21.165Z] CLI Version:   12.8.0
+[debug] [2023-11-04T00:06:21.166Z] Platform:      win32
+[debug] [2023-11-04T00:06:21.166Z] Node Version:  v18.16.0
+[debug] [2023-11-04T00:06:21.167Z] Time:          Fri Nov 03 2023 18:06:21 GMT-0600 (hora estándar central)
+[debug] [2023-11-04T00:06:21.167Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-04T00:06:21.174Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-04T00:06:21.175Z] > authorizing via signed-in user (estebanlm2803@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Esteb\OneDrive\Documentos\GitHub\INTELIGENCIA ARTIFICIAL\AILearner
+
+[debug] [2023-11-04T00:06:57.617Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\Esteb\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:254:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.
