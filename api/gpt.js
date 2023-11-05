@@ -1,7 +1,8 @@
 
 const path = require('path')
 require('dotenv').config({ path: path.join(__dirname, '../config/.env') });
-import {fs} from 'fs';
+const fs = require('fs');
+
 
 const OpenAI = require("openai");
 
