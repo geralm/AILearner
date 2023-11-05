@@ -21,8 +21,8 @@ module.exports.renderHall = async (req, res) => {
 module.exports.fetchQuestionFromAPIs = async (req, res) => {
     const { id } = req.params;
     const { question } = req.body.chat;
-    const gptResponse = await gptapi(question,30, words_limit = 100);
     const room = await Room.findById(id).lean();//.populate('conversations');
+    const gptResponse = await gptapi(question,30, words_limit = 100, room.bot_role);
     if(!gptResponse.error){
         const googleResponse = await textToSpeechapi(gptResponse);
         const meaningCloudResponse = await meaningcloudapi(question);
